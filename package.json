@@ -1,5 +1,5 @@
 {
-  "name": "rails-mister-cocktail",
+  "name": "rails-mister-cocktails",
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",

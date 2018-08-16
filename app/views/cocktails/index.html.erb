@@ -1,0 +1,17 @@
+
+<h1> List of Cocktails </h1>
+
+  <ul class="list-group">
+    <% @cocktails.each do |cocktail| %>
+    <li class="list-group-item">
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+    </li>
+    <% end %>
+  </ul>
+
+  <%= simple_form_for [@cocktail] do |f| %>
+  <%= f.input :name %>
+  <%= f.submit "add a cocktail", class: "btn btn-primary" %>
+  <% end %>
+
+

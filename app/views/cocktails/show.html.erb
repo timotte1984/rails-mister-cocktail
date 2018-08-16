@@ -1,0 +1,27 @@
+<h1> <%= @cocktail.name %> </h1>
+
+<ul class="list-group">
+  <% @cocktail.doses.each do |dose| %>
+  <li class="list-group-item">
+    <p>  <%= dose.description %> : <%= dose.ingredient.name %>
+      <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe,
+       cocktail_dose_path(@cocktail,dose),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %> </p>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to 'backToListOfCocktails', cocktails_path %>
+
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.association :ingredient, collection: Ingredient.order(:name) %>
+  <%= f.submit "add a cocktail", class: "btn btn-primary" %>
+  <% end %>
+
+
+
+
+
+
