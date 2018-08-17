@@ -14,7 +14,11 @@
 
   <body>
     <div class="container">
-      <%= yield %>
+      <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+          <%= yield %>
+        </div>
+      </div>
     </div>
     <%= javascript_include_tag "application" %>
     <%= javascript_pack_tag "application" %>

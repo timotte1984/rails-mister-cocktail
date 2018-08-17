@@ -1,5 +1,7 @@
 <h1> <%= @cocktail.name %> </h1>
 <%= cl_image_tag @cocktail.photo, height: 300, width: 300, crop: :fill %>
+<%= cl_image_tag("zx1zisnmhtxegk6chis4.jpg",
+      width: 400, height: 300, crop: :fill) %>
 
 <ul class="list-group">
   <% @cocktail.doses.each do |dose| %>
