@@ -5,20 +5,24 @@
   <li class="list-group-item">
     <p>  <%= dose.description %> : <%= dose.ingredient.name %>
       <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe,
-       cocktail_dose_path(@cocktail,dose),
+       dose_path(dose),
       method: :delete,
       data: { confirm: "Are you sure?" } %> </p>
   </li>
   <% end %>
 </ul>
 
-<%= link_to 'backToListOfCocktails', cocktails_path %>
 
   <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.input :description %>
   <%= f.association :ingredient, collection: Ingredient.order(:name) %>
-  <%= f.submit "add a cocktail", class: "btn btn-primary" %>
+  <%= f.submit "add a dose", class: "btn btn-primary" %>
   <% end %>
+
+<br/>
+
+
+<%= link_to 'backToListOfCocktails', cocktails_path %>
 
 
 
